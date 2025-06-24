@@ -1,3 +1,5 @@
+// src/pages/DashboardPage.tsx
+
 import React, { useState, useEffect } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -29,13 +31,15 @@ import {
 import { toast } from 'sonner'
 import { useAuth } from '@/hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
+// --- THIS IS THE LINE TO FIX ---
 import { 
   patientService, 
   appointmentService, 
   billingService,
   ipdService,
   doctorService 
-} from '@/services/supabaseClient'
+} from '@/services' // Corrected: import from the services barrel file
+// ------------------------------
 import KPICard from '@/components/dashboard/KPICard'
 import TrendChart from '@/components/dashboard/TrendChart'
 
